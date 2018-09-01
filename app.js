@@ -13,29 +13,29 @@ midiConnector.on("ready",function(launchpad) {
   //launchpad.scrollString('hello', colour);
   //launchpad.displayString('EMF', colour);
 
-launchpad.on("press", function(btn) {
-  console.log("Pressed: "+
-      "x:"        +btn.x          +", "+
-      "y:"        +btn.y          +", "+
-      "state:"    +btn.getState() +", "+
-      "special:"  +btn.special
-  );
-  if(!(btn.x == 8 && btn.y == 7)){
-    if(btn.getState() == 0) {
-      btn.light(green);
+  launchpad.on("press", function(btn) {
+    console.log("Pressed: "+
+        "x:"        +btn.x          +", "+
+        "y:"        +btn.y          +", "+
+        "state:"    +btn.getState() +", "+
+        "special:"  +btn.special
+    );
+    if(!(btn.x == 8 && btn.y == 7)){
+      if(btn.getState() == 0) {
+        btn.light(green);
+      }
+      else {
+        btn.light(off);
+      }
     }
-    else {
-      btn.light(off);
-    }
-  }
-});
-
-var clearButton = launchpad.getButton(8, 7);
-  clearButton.on('press', function(){
-    launchpad.clear();
-    clearButton.light(launchpad.colors.red.high);
   });
-  clearButton.light(launchpad.colors.red.high);
+
+  var clearButton = launchpad.getButton(8, 7);
+    clearButton.on('press', function(){
+      launchpad.clear();
+      clearButton.light(launchpad.colors.red.high);
+    });
+    clearButton.light(launchpad.colors.red.high);
 
   // launchpad.clear();
   // launchpad.renderBytes(

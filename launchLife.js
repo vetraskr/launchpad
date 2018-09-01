@@ -1,38 +1,13 @@
 var life = require('./life.js').init(8);
 var fs = require('fs');
 
-
- life.setCell(3, 1, true);
- life.setCell(4, 1, true);
- life.setCell(5, 1, true);
-
-// function write(something){
-//   fs.writeSync(1, something);
-//   fs.fsyncSync(1);
-// }
-
-// function display(world, n){
-//   for(cellN = 0; cellN < world.length; cellN ++){
-
-//     write(world[cellN] ? '1': '0');
-
-//     if((cellN+1) % n == 0) {
-//       write('\n');
-//     }
-//   }
-//   write('\n');
-//   write('\n');
-// }
-
-// life.step(display);
-
-// life.step(display);
-
-// life.step(display);
-
-
 var midiport = 0;
 var midiConnector = require('midi-launchpad').connect(midiport);
+
+// set initial state of life area
+life.setCell(3, 1, true);
+life.setCell(4, 1, true);
+life.setCell(5, 1, true);
 
 // wait for the connector to be ready
 midiConnector.on("ready",function(launchpad) {
@@ -121,9 +96,3 @@ midiConnector.on("ready",function(launchpad) {
 
   loop();
 });
-
-
-// TODO:
-// --fix clear so that it clears world array
-// --fix loop so that it works
-// --fix edge cases so that everything wraps correctly
