@@ -1,0 +1,23 @@
+{
+  "name": "launchpad",
+  "version": "1.0.0",
+  "description": "Repository for node.js apps playing with a Novation Launchpad mini.",
+  "main": "app.js",
+  "dependencies": {
+    "midi-launchpad": "^1.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vetraskr/launchpad.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vetraskr/launchpad/issues"
+  },
+  "homepage": "https://github.com/vetraskr/launchpad#readme"
+}
